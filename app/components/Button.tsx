@@ -1,4 +1,3 @@
-
 "use client";
 
 import { clsx } from "clsx";
@@ -23,13 +22,13 @@ export function Button({
   disabled = false,
   icon,
 }: ButtonProps) {
-  const baseClasses = "inline-flex items-center justify-center transition-all duration-150 font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseClasses = "inline-flex items-center justify-center transition-all duration-150 font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:translate-y-0.5";
   
   const variantClasses = {
-    default: "btn-primary",
-    secondary: "btn-secondary", 
-    destructive: "btn-destructive",
-    outline: "btn-outline",
+    default: "btn-primary shadow-sm hover:shadow",
+    secondary: "btn-secondary shadow-sm hover:shadow", 
+    destructive: "btn-destructive shadow-sm hover:shadow",
+    outline: "btn-outline hover:border-accent/50",
     ghost: "btn-ghost",
   };
 
@@ -49,8 +48,10 @@ export function Button({
         sizeClasses[size],
         className
       )}
+      type={onClick ? "button" : "submit"}
+      aria-disabled={disabled}
     >
-      {icon && <span className="mr-2">{icon}</span>}
+      {icon && <span className="mr-2" aria-hidden="true">{icon}</span>}
       {children}
     </button>
   );
