@@ -8,6 +8,7 @@ import {
   ExternalLink,
   Lock,
   MessageCircle,
+  Minus,
   Plus,
   RotateCcw,
   Settings,
@@ -15,6 +16,7 @@ import {
   Star,
   Users,
   Wallet,
+  X,
   Zap,
 } from "lucide-react";
 
@@ -26,6 +28,7 @@ const icons = {
   externalLink: ExternalLink,
   lock: Lock,
   messageCircle: MessageCircle,
+  minus: Minus,
   plus: Plus,
   refresh: RotateCcw,
   settings: Settings,
@@ -33,6 +36,7 @@ const icons = {
   star: Star,
   users: Users,
   wallet: Wallet,
+  x: X,
   zap: Zap,
 };
 
