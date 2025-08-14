@@ -56,7 +56,7 @@ export function CreatorCard({ creator }: CreatorCardProps) {
           size="sm"
           onClick={() => setExpanded(!expanded)}
         >
-          <Icon name={expanded ? "minus" : "plus"} size="sm" />
+          <Icon name="plus" size="sm" />
         </Button>
       </div>
 
