@@ -70,3 +70,44 @@
   from { transform: translateY(10px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@layer components {
+  .toast {
+    @apply fixed bottom-4 right-4 z-50 p-4 rounded-lg shadow-lg bg-surface border border-border max-w-sm;
+  }
+  
+  .toast-success {
+    @apply border-green-500/20 bg-green-50;
+  }
+  
+  .toast-error {
+    @apply border-destructive/20 bg-red-50;
+  }
+  
+  .toast-info {
+    @apply border-accent/20 bg-blue-50;
+  }
+  
+  .skeleton {
+    @apply bg-border/50 animate-pulse;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+}
