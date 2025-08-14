@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "./Button";
@@ -56,14 +55,14 @@ export function TierCard({ tier }: TierCardProps) {
             {tier.memberCount} members
           </span>
           <span className="flex items-center">
-            <Icon name="message" size={14} className="mr-1" />
+            <Icon name="messageCircle" size={14} className="mr-1" />
             Chat access
           </span>
         </div>
         
         <div className="flex space-x-2">
           <Button variant="outline" size="sm" onClick={handleJoinChat}>
-            <Icon name="message" size={14} className="mr-1" />
+            <Icon name="messageCircle" size={14} className="mr-1" />
             Preview
           </Button>
           <Button variant="default" size="sm" onClick={handleSubscribe}>
