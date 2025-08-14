@@ -10,14 +10,14 @@
     "subtitle": "Built with Zara",
     "description": "ForgeStream is a Base Mini App built with Zara.",
     "iconUrl": "https://0co.to/images/zara-2.png",
-    "homeUrl": "https://b01c3c0e-fbe6-452d-83b7-835c6873ee8d.vistara.dev",
-    "splashImageUrl": "https://dummyimage.com/200x200/0a0b0d/ffffff.png&text=Splash",
+    "homeUrl": "https://b01c3c0efbe6452d83b7835c6873ee8d-1g1k-j71uvbv68-vistara.vercel.app",
+    "splashImageUrl": "https://b01c3c0efbe6452d83b7835c6873ee8d-1g1k-j71uvbv68-vistara.vercel.app/splash.png",
     "splashBackgroundColor": "#000000",
-    "heroImageUrl": "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=Hero",
+    "heroImageUrl": "https://b01c3c0efbe6452d83b7835c6873ee8d-1g1k-j71uvbv68-vistara.vercel.app/image.png",
     "tagline": "ForgeStream",
     "screenshotUrls": [
-      "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=Shot1",
-      "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=Shot2"
+      "https://b01c3c0efbe6452d83b7835c6873ee8d-1g1k-j71uvbv68-vistara.vercel.app/screenshot.png",
+      "https://b01c3c0efbe6452d83b7835c6873ee8d-1g1k-j71uvbv68-vistara.vercel.app/screenshot.png"
     ],
     "primaryCategory": "social",
     "tags": [
@@ -25,6 +25,6 @@
       "miniapp",
       "onchainkit"
     ],
-    "webhookUrl": "https://b01c3c0e-fbe6-452d-83b7-835c6873ee8d.vistara.dev/api/webhook"
+    "webhookUrl": "https://b01c3c0efbe6452d83b7835c6873ee8d-1g1k-j71uvbv68-vistara.vercel.app/api/webhook"
   }
 }
