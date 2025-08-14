@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -52,7 +51,7 @@ export default function App() {
           size="sm"
           onClick={handleAddFrame}
           className="text-accent p-2"
-          icon={<Icon name="plus" size={16} />}
+          icon={<Icon name="plus" size="sm" />}
         >
           Save
         </Button>
@@ -62,7 +61,7 @@ export default function App() {
     if (frameAdded) {
       return (
         <div className="flex items-center space-x-1 text-sm font-medium text-accent animate-fade-in">
-          <Icon name="check" size={16} className="text-accent" />
+          <Icon name="check" size="sm" className="text-accent" />
           <span>Saved</span>
         </div>
       );
@@ -77,7 +76,7 @@ export default function App() {
         <header className="flex justify-between items-center mb-6">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center">
-              <Icon name="zap" size={20} className="text-white" />
+              <Icon name="zap" size="md" className="text-white" />
             </div>
             <div>
               <h1 className="text-heading font-bold text-foreground">ForgeStream</h1>
@@ -135,13 +134,13 @@ export default function App() {
           )}
           {activeTab === "subscriptions" && (
             <div className="card text-center py-12">
-              <Icon name="lock" size={48} className="text-muted mx-auto mb-4" />
+              <Icon name="lock" size="lg" className="text-muted mx-auto mb-4" />
               <h3 className="text-heading mb-2">Your Access Passes</h3>
               <p className="text-body text-muted-foreground mb-6">
                 Connect your wallet to view your creator subscriptions and access keys.
               </p>
               <Button variant="outline">
-                <Icon name="refresh" size={16} className="mr-2" />
+                <Icon name="refresh" size="sm" className="mr-2" />
                 Refresh Access
               </Button>
             </div>

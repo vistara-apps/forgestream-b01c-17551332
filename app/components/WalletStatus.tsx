@@ -46,7 +46,7 @@ export function WalletStatus({
         onClick={onConnect}
         className={`flex items-center ${className}`}
       >
-        <Icon name="wallet" size={16} className="mr-2" />
+        <Icon name="wallet" size="sm" className="mr-2" />
         <span className="hidden sm:inline">Connect Wallet</span>
         <span className="sm:hidden">Connect</span>
       </Button>
@@ -62,7 +62,7 @@ export function WalletStatus({
           onClick={onSwitchNetwork}
           className={`flex items-center text-destructive border-destructive/50 ${className}`}
         >
-          <Icon name="alertCircle" size={16} className="mr-2" />
+          <Icon name="alertCircle" size="sm" className="mr-2" />
           <span className="hidden sm:inline">Wrong Network</span>
           <span className="sm:hidden">Switch</span>
         </Button>
@@ -81,4 +81,3 @@ export function WalletStatus({
     </div>
   );
 }
-

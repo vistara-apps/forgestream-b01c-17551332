@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -43,11 +42,11 @@ export function CreatorCard({ creator }: CreatorCardProps) {
           <p className="text-body text-muted-foreground mb-2">{creator.bio}</p>
           <div className="flex items-center space-x-4 text-caption text-muted-foreground">
             <span className="flex items-center">
-              <Icon name="users" size={14} className="mr-1" />
+              <Icon name="users" size="sm" className="mr-1" />
               {creator.followers.toLocaleString()} followers
             </span>
             <span className="flex items-center">
-              <Icon name="crown" size={14} className="mr-1" />
+              <Icon name="crown" size="sm" className="mr-1" />
               {creator.tiers.length} tier{creator.tiers.length !== 1 ? 's' : ''}
             </span>
           </div>
@@ -57,7 +56,7 @@ export function CreatorCard({ creator }: CreatorCardProps) {
           size="sm"
           onClick={() => setExpanded(!expanded)}
         >
-          <Icon name={expanded ? "minus" : "plus"} size={16} />
+          <Icon name={expanded ? "minus" : "plus"} size="sm" />
         </Button>
       </div>
 

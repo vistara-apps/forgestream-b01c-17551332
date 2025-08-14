@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, type ReactNode } from "react";
@@ -37,7 +36,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         <div className="flex items-center justify-between p-6 border-b border-border">
           <h3 className="text-heading font-semibold">{title}</h3>
           <Button variant="ghost" size="sm" onClick={onClose}>
-            <Icon name="x" size={20} />
+            <Icon name="x" size="md" />
           </Button>
         </div>
         <div className="p-6">

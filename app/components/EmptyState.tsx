@@ -67,7 +67,7 @@ export function EmptyState({
 export function NoSubscriptionsState({ onRefresh }: { onRefresh: () => void }) {
   return (
     <EmptyState
-      icon={<Icon name="lock" size={48} className="text-muted" />}
+      icon={<Icon name="lock" size="lg" className="text-muted" />}
       title="No Access Passes Found"
       description="Subscribe to creators to unlock exclusive content and join their communities."
       action={{
@@ -87,7 +87,7 @@ export function NoSubscriptionsState({ onRefresh }: { onRefresh: () => void }) {
 export function NoCreatorsState() {
   return (
     <EmptyState
-      icon={<Icon name="users" size={48} className="text-muted" />}
+      icon={<Icon name="users" size="lg" className="text-muted" />}
       title="No Creators Found"
       description="We couldn't find any creators at the moment. Please check back later."
       action={{
@@ -102,7 +102,7 @@ export function NoCreatorsState() {
 export function NoSearchResultsState({ query, onClear }: { query: string; onClear: () => void }) {
   return (
     <EmptyState
-      icon={<Icon name="search" size={48} className="text-muted" />}
+      icon={<Icon name="search" size="lg" className="text-muted" />}
       title="No Results Found"
       description={`We couldn't find any creators matching "${query}". Try a different search term.`}
       action={{
@@ -113,4 +113,3 @@ export function NoSearchResultsState({ query, onClear }: { query: string; onClea
     />
   );
 }
-
