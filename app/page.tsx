@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -24,6 +23,7 @@ import { CreatorGrid } from "./components/CreatorGrid";
 import { WelcomeHero } from "./components/WelcomeHero";
 import { Button } from "./components/Button";
 import { Icon } from "./components/Icon";
+import { NoSubscriptionsState } from "./components/EmptyState";
 
 export default function App() {
   const { setFrameReady, isFrameReady, context } = useMiniKit();
@@ -72,22 +72,25 @@ export default function App() {
   }, [context, frameAdded, handleAddFrame]);
 
   return (
-    <div className="app-shell">
-      <div className="container-fluid py-4">
-        <header className="flex justify-between items-center mb-6">
+    <div className="app-shell min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 py-4 max-w-6xl">
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center">
+            <div className="w-10 h-10 bg-accent rounded-md flex items-center justify-center shadow-sm">
               <Icon name="zap" size={20} className="text-white" />
             </div>
             <div>
-              <h1 className="text-heading font-bold text-foreground">ForgeStream</h1>
-              <p className="text-caption text-muted-foreground">Token-gated communities</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-foreground">ForgeStream</h1>
+              <p className="text-sm text-muted-foreground">Token-gated communities</p>
             </div>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 self-end sm:self-auto">
             <Wallet className="z-10">
               <ConnectWallet>
-                <Name className="text-inherit text-sm" />
+                <Name className="text-inherit text-sm hidden sm:block" />
+                <div className="sm:hidden">
+                  <Icon name="wallet" size="md" />
+                </div>
               </ConnectWallet>
               <WalletDropdown>
                 <Identity className="px-4 pt-3 pb-2" hasCopyAddressOnClick>
@@ -103,24 +106,28 @@ export default function App() {
           </div>
         </header>
 
-        <nav className="flex space-x-1 mb-6 bg-surface rounded-lg p-1 border border-border">
+        <nav className="flex space-x-1 mb-6 bg-surface rounded-lg p-1 border border-border overflow-x-auto">
           <button
             onClick={() => setActiveTab("discover")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 flex-1 ${
               activeTab === "discover"
                 ? "bg-accent text-white"
                 : "text-foreground hover:bg-bg"
             }`}
+            aria-selected={activeTab === "discover"}
+            role="tab"
           >
             Discover
           </button>
           <button
             onClick={() => setActiveTab("subscriptions")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 flex-1 ${
               activeTab === "subscriptions"
                 ? "bg-accent text-white"
                 : "text-foreground hover:bg-bg"
             }`}
+            aria-selected={activeTab === "subscriptions"}
+            role="tab"
           >
             My Access
           </button>
@@ -134,16 +141,31 @@ export default function App() {
             </>
           )}
           {activeTab === "subscriptions" && (
-            <div className="card text-center py-12">
-              <Icon name="lock" size={48} className="text-muted mx-auto mb-4" />
-              <h3 className="text-heading mb-2">Your Access Passes</h3>
-              <p className="text-body text-muted-foreground mb-6">
-                Connect your wallet to view your creator subscriptions and access keys.
-              </p>
-              <Button variant="outline">
-                <Icon name="refresh" size={16} className="mr-2" />
-                Refresh Access
-              </Button>
+            <div className="animate-fade-in">
+              {context?.client.address ? (
+                <NoSubscriptionsState 
+                  onRefresh={() => {
+                    // In a real app, this would refresh the user's subscriptions
+                    console.log("Refreshing access for:", context.client.address);
+                  }} 
+                />
+              ) : (
+                <div className="card text-center py-8 sm:py-12">
+                  <Icon name="wallet" size={48} className="text-muted mx-auto mb-4" />
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-2">Connect Your Wallet</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-md mx-auto">
+                    Connect your wallet to view your creator subscriptions and access keys.
+                  </p>
+                  <Wallet>
+                    <ConnectWallet>
+                      <Button variant="default">
+                        <Icon name="wallet" size={16} className="mr-2" />
+                        Connect Wallet
+                      </Button>
+                    </ConnectWallet>
+                  </Wallet>
+                </div>
+              )}
             </div>
           )}
         </main>
@@ -152,7 +174,7 @@ export default function App() {
           <Button
             variant="ghost"
             size="sm"
-            className="text-muted-foreground text-caption"
+            className="text-muted-foreground text-xs sm:text-sm"
             onClick={() => openUrl("https://base.org/builders/minikit")}
           >
             Built on Base with MiniKit
