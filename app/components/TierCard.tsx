@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "./Button";
@@ -34,7 +33,7 @@ export function TierCard({ tier }: TierCardProps) {
       <div className="flex justify-between items-start mb-3">
         <div>
           <h6 className="text-subheading font-medium flex items-center">
-            <Icon name="crown" size={16} className="mr-2 text-accent" />
+            <Icon name="crown" size="sm" className="mr-2 text-accent" />
             {tier.name}
           </h6>
           <p className="text-body text-muted-foreground">{tier.description}</p>
@@ -52,22 +51,22 @@ export function TierCard({ tier }: TierCardProps) {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4 text-caption text-muted-foreground">
           <span className="flex items-center">
-            <Icon name="users" size={14} className="mr-1" />
+            <Icon name="users" size="sm" className="mr-1" />
             {tier.memberCount} members
           </span>
           <span className="flex items-center">
-            <Icon name="message" size={14} className="mr-1" />
+            <Icon name="message" size="sm" className="mr-1" />
             Chat access
           </span>
         </div>
         
         <div className="flex space-x-2">
           <Button variant="outline" size="sm" onClick={handleJoinChat}>
-            <Icon name="message" size={14} className="mr-1" />
+            <Icon name="message" size="sm" className="mr-1" />
             Preview
           </Button>
           <Button variant="default" size="sm" onClick={handleSubscribe}>
-            <Icon name="lock" size={14} className="mr-1" />
+            <Icon name="lock" size="sm" className="mr-1" />
             Subscribe
           </Button>
         </div>

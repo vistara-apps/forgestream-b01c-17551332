@@ -1,7 +1,7 @@
-
 import "./globals.css";
 import "@coinbase/onchainkit/styles.css";
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Providers } from "./providers";
 
 export const viewport: Viewport = {

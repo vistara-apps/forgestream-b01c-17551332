@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "./Button";
@@ -9,7 +8,7 @@ export function WelcomeHero() {
     <div className="card mb-8 text-center bg-gradient-to-br from-surface to-bg border-accent/20">
       <div className="mb-6">
         <div className="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4">
-          <Icon name="crown" size={32} className="text-white" />
+          <Icon name="crown" size="lg" className="text-white" />
         </div>
         <h2 className="text-display mb-4">
           Join Exclusive Creator Communities
@@ -21,11 +20,11 @@ export function WelcomeHero() {
       
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <Button variant="default">
-          <Icon name="star" size={16} className="mr-2" />
+          <Icon name="star" size="sm" className="mr-2" />
           Explore Creators
         </Button>
         <Button variant="outline">
-          <Icon name="shield" size={16} className="mr-2" />
+          <Icon name="shield" size="sm" className="mr-2" />
           How It Works
         </Button>
       </div>
