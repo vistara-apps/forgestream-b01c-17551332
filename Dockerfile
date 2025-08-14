@@ -1,7 +1,7 @@
 FROM node:24-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 COPY . .
 RUN npm run build
 
@@ -19,6 +19,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/package*.json ./
 
+# Install only production dependencies
+RUN npm ci --omit=dev
+
 # Set proper permissions
 RUN chown -R appuser:nodejs .
 
@@ -29,3 +32,4 @@ ENV HOSTNAME="0.0.0.0"
 ENV NODE_ENV=production
 
 CMD ["npm", "start"]
+
